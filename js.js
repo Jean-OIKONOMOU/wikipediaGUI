@@ -30,7 +30,7 @@ fetch('https://project-622bb.firebaseio.com/BeCode.json')
 
     // creates a <table> element and a <tbody> element
     var tbl = document.createElement("table");
-    tbl.style.margin = "auto 0 auto 0";
+    tbl.style.margin = "0 auto";
     var tblBody = document.createElement("tbody");
 
     // creating all cells
@@ -69,8 +69,10 @@ fetch('https://project-622bb.firebaseio.com/BeCode.json')
         var cell3 = document.createElement("td");
         var img = document.createElement("img");
         img.setAttribute("src", jayson[i].image);
-        img.setAttribute("width", "50%");
+        img.setAttribute("width", "100%");
         img.setAttribute("height", "40%");
+        cell3.style.width = '200px';
+
         cell3.appendChild(img);
         row.appendChild(cell3);
         //  cell3.style.border = "2px dashed green";
