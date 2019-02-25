@@ -1,15 +1,27 @@
 /*jshint esversion: 6 */
 
-fetch('https://project-622bb.firebaseio.com/BeCode.json')
+const request = new XMLHttpRequest();
 
-  .then(function(resp) {
-    return resp.json();
-  })
-  .then(function(data) {
-    console.log(data);
-    var jayson = data;
-    console.log(jayson);
+request.open('GET', 'https://project-622bb.firebaseio.com/BeCode.json', true);
+request.send();
 
+request.onload = function() {
+  if (request.readyState === 4 && request.status === 200) {
+    console.log("Success"); // JSON DATA HAS BEEN RECEIVED SUCCESSFULLY AND IS READY FOR WORK
+/*    var x = request.responseText; // EXTRACT THE RAX TEXT FROM THE JSON
+    document.getElementById("id01").innerHTML = x; // DISPLAY RAW TEXT IN HTML*/
+
+    /* ARRAY ELEMENTS :
+    history TH
+    image TH
+    profile TD
+    firstname TD (concatenate with lastname)
+    lastname TD
+    wiki*/
+
+
+    // EXTRACTING THE DATA ELEMENT BY ELEMENT
+    jayson = JSON.parse(request.response);
     console.log(jayson[0].history);
     console.log(jayson.length);
     console.log(jayson[0].image);
@@ -19,14 +31,15 @@ fetch('https://project-622bb.firebaseio.com/BeCode.json')
     console.log(jayson[0].profile.lastname);
 
     var table;
-    /*  // CREATING TABLE
-      for (i = 0; i < jayson.length; i++) {
-        table = "<table>";
-        table += "<tr><td>Name</td><td>History</td></tr>";
-        table += "<tr><td>" + jayson[i].profile.firstname + " " + jayson[i].profile.lastname + "</td><td>" + jayson[i].history + "</td></tr>";
-        table += "</table>";
-        document.getElementById("id01").innerHTML = table;
-      }*/
+  /*  // CREATING TABLE
+    for (i = 0; i < jayson.length; i++) {
+      table = "<table>";
+      table += "<tr><td>Name</td><td>History</td></tr>";
+      table += "<tr><td>" + jayson[i].profile.firstname + " " + jayson[i].profile.lastname + "</td><td>" + jayson[i].history + "</td></tr>";
+      table += "</table>";
+      document.getElementById("id01").innerHTML = table;
+    }*/
+
 
     // creates a <table> element and a <tbody> element
     var tbl = document.createElement("table");
@@ -73,7 +86,7 @@ fetch('https://project-622bb.firebaseio.com/BeCode.json')
         img.setAttribute("height", "40%");
         cell3.appendChild(img);
         row.appendChild(cell3);
-        //  cell3.style.border = "2px dashed green";
+      //  cell3.style.border = "2px dashed green";
       }
 
       // add the row to the end of the table body
@@ -84,4 +97,11 @@ fetch('https://project-622bb.firebaseio.com/BeCode.json')
     tbl.appendChild(tblBody);
     // appends <table> into <body>
     document.getElementById("id01").appendChild(tbl);
-  });
+  }
+};
+
+
+
+request.onerror = function() {
+  console.log("error");
+};
