@@ -52,6 +52,7 @@ fetch('https://project-622bb.firebaseio.com/BeCode.json')
         row.appendChild(cell1);
         cell1.style.border = "2px dashed red";
         cell1.style.padding = '15px';
+        cell1.style.textAlign = "center";
       }
 
       for (j = 0; j < 1; j++) {
@@ -72,6 +73,7 @@ fetch('https://project-622bb.firebaseio.com/BeCode.json')
         img.setAttribute("width", "100%");
         img.setAttribute("height", "40%");
         cell3.style.width = '200px';
+        cell3.style.border = "2px dashed green";
 
         cell3.appendChild(img);
         row.appendChild(cell3);
