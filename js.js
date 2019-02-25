@@ -6,7 +6,6 @@ fetch('https://project-622bb.firebaseio.com/BeCode.json')
     return resp.json();
   })
   .then(function(data) {
-    console.log(data);
     var jayson = data;
     console.log(jayson);
 
