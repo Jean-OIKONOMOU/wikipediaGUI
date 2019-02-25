@@ -6,8 +6,8 @@ request.send();
 request.onload = function() {
   if (request.readyState === 4 && request.status === 200) {
     console.log("Success"); // JSON DATA HAS BEEN RECEIVED SUCCESSFULLY AND IS READY FOR WORK
-  //  var x = request.responseText; // EXTRACT THE RAX TEXT FROM THE JSON
-  //  document.getElementById("id01").innerHTML = x; // DISPLAY RAW TEXT IN HTML
+/*    var x = request.responseText; // EXTRACT THE RAX TEXT FROM THE JSON
+    document.getElementById("id01").innerHTML = x; // DISPLAY RAW TEXT IN HTML*/
 
     /* ARRAY ELEMENTS :
     history TH
@@ -15,8 +15,8 @@ request.onload = function() {
     profile TD
     firstname TD (concatenate with lastname)
     lastname TD
-    wiki
-    */
+    wiki*/
+
 
     // EXTRACTING THE DATA ELEMENT BY ELEMENT
     jayson = JSON.parse(request.response);
@@ -28,8 +28,8 @@ request.onload = function() {
     console.log(jayson[0].profile.firstname);
     console.log(jayson[0].profile.lastname);
 
-  /*  var table;
-    // CREATING TABLE
+    var table;
+  /*  // CREATING TABLE
     for (i = 0; i < jayson.length; i++) {
       table = "<table>";
       table += "<tr><td>Name</td><td>History</td></tr>";
@@ -41,7 +41,7 @@ request.onload = function() {
 
     // creates a <table> element and a <tbody> element
     var tbl = document.createElement("table");
-    tbl.style.margin = "auto 0 auto 250px";
+    tbl.style.margin = "auto 0 auto 0";
     var tblBody = document.createElement("tbody");
 
     // creating all cells
