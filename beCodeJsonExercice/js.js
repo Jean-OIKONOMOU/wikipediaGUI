@@ -7,17 +7,16 @@ fetch('https://project-622bb.firebaseio.com/BeCode.json')
   })
   .then(function(data) {
     var jayson = data;
+    //document.getElementById("id01").innerHTML = JSON.stringify(jayson);
     console.log(jayson);
-
-    console.log(jayson[0].history);
-    console.log(jayson.length);
+    console.log("console.log of jayson[0].history " + jayson[0].history);
+    console.log("console.log of jayson.length " + jayson.length);
     console.log(jayson[0].image);
     console.log(jayson[0].wiki);
     console.log(jayson[0].profile);
     console.log(jayson[0].profile.firstname);
     console.log(jayson[0].profile.lastname);
 
-    var table;
     /*  // CREATING TABLE
       for (i = 0; i < jayson.length; i++) {
         table = "<table>";
@@ -28,11 +27,12 @@ fetch('https://project-622bb.firebaseio.com/BeCode.json')
       }*/
 
     // creates a <table> element and a <tbody> element
+
     var tbl = document.createElement("table");
     tbl.style.margin = "0 auto";
     var tblBody = document.createElement("tbody");
 
-    // creating all cells
+    // creating the rows
     for (i = 0; i < jayson.length; i++) {
 
       // creates a table row
