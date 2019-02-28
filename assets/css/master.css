@@ -1,9 +1,14 @@
-body {
-  background-size: cover;
-  background-repeat: no-repeat;
+:root {
+  font-family: sans-serif;
   margin: 0;
+  background-color: #d9d9d9;
 }
 
+/*body {
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}*/
 .container {
   overflow: hidden;
   background-color: #6f7c6f;
@@ -35,8 +40,26 @@ main {
 }
 
 #id02 {
-  background-color: green;
-  float: left;
+}
+
+ul {
+  list-style-type: none;
+  padding: 1rem;
+  text-transform: uppercase;
+  text-decoration: underline;
+  margin-left: 2rem;
+}
+
+#container2 {
+  position:fixed;
+  background-color: #6f7c6f;
+  left:0;
+  bottom:0;
+  right: auto;
+  padding: 1rem;
+  height: 85%;
+  white-space: nowrap;
+  transition: all 2s;
 }
 
 #searchBar {
@@ -50,7 +73,6 @@ main {
   font-size: 20px;
   box-sizing: border-box;
   padding: 3px 0 3px 12px;
-  font-family: sans-serif;
   width: 60%;
   /*transform: translateY(-15%);*/
   border: 1px solid #000000;
@@ -63,7 +85,7 @@ button {
   border: 1px solid #000000;
   padding: 4px 5px;
   margin: 0;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .tile {
@@ -74,7 +96,7 @@ button {
   background: rgb(76, 169, 173, 0.8);
   position: relative;
   border-radius: 5px;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 td:hover {
@@ -108,9 +130,18 @@ iframe {
 
 /* ANIMATION CORNER ! */
 /* IFRAME DROPDOWN ANIMATION THING */
-.section {
-  overflow:hidden;
-  transition:height 1s ease-out;
+
+.iframeAnimate {
+  overflow: hidden;
+  transition: height 1s ease-out;
+}
+
+.panelAnimate {
+  overflow: hidden;
+  -webkit-transform: translate(100%,0) 1s ease-out;
+        -moz-transform: translate(100%,0) 1s ease-out;
+        -ms-transform: translate(100%,0) 1s ease-out;
+        -o-transform: translate(100%,0) 1s ease-out;
 }
 
 /* MAGIC WAND ROTATION */

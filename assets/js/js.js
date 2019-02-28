@@ -2,9 +2,16 @@ var button = document.getElementById("target");
 var searchBar = document.getElementById('searchBar');
 var input = document.getElementById("searchTxt");
 var myDiv = document.getElementById("id01");
+var myList = document.getElementById("id02");
 
 button.addEventListener('click', function() {
-  myDiv.removeChild(myDiv.childNodes[0]);
+//  myDiv.removeChild(myDiv.childNodes[0]);
+  while (myDiv.firstChild) {
+    myDiv.removeChild(myDiv.firstChild);
+}
+  while (myList.firstChild) {
+    myList.removeChild(myList.firstChild);
+}
 
   var trucBidule = input.value;
   var url = "https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=" + trucBidule;
@@ -34,6 +41,13 @@ button.addEventListener('click', function() {
         linebreak = document.createElement("br");
         a.appendChild(linebreak);
         cell1.appendChild(a);
+        // MY LIST
+        var ul = document.createElement("ul");
+        var li = document.createElement("li");
+        li.innerHTML = data[1][i];
+        ul.appendChild(li);
+        myList.appendChild(ul);
+        document.getElementById("container2").className="panelAnimate";
         // CREATING PARAGRAPH ELEMENT
         var history = document.createElement("p");
         history.innerHTML = data[2][i];
@@ -63,7 +77,7 @@ button.addEventListener('click', function() {
 
           if (t[0].clientHeight == 0) {
             t[0].style.height = "350px";
-            t[0].className = 'section';
+            t[0].className = 'iframeAnimate';
           } else if (t[0].clientHeight >= 1) {
             t[0].style.height = "0";
             //  t[0].style.maxHeight = "0px";
