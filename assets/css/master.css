@@ -1,5 +1,4 @@
 body {
-  background-image: url('../img/S.png');
   background-size: cover;
   background-repeat: no-repeat;
   margin: 0;
@@ -64,6 +63,7 @@ button {
   border: 1px solid #000000;
   padding: 4px 5px;
   margin: 0;
+  cursor:pointer;
 }
 
 .tile {
@@ -74,6 +74,11 @@ button {
   background: rgb(76, 169, 173, 0.8);
   position: relative;
   border-radius: 5px;
+  cursor:pointer;
+}
+
+td:hover {
+  background-color: rgb(76, 169, 180, 1);
 }
 
 table {
@@ -85,10 +90,6 @@ table {
 iframe {
   width: 700px;
   border: none;
-}
-
-td:hover {
-  background-color: rgb(76, 169, 180, 1);
 }
 
 .fa-magic {
@@ -105,16 +106,11 @@ td:hover {
   animation: rotating 2s linear infinite, rainbow 3s infinite;
 }
 
+/* ANIMATION CORNER ! */
 /* IFRAME DROPDOWN ANIMATION THING */
-
 .section {
   overflow:hidden;
-  transition:max-height 0.3s ease-out; /* note that we're transitioning max-height, not height!*/
-  height:auto;
-  max-height:600px; /* still have to hard-code a value!*/
-}
-.section.collapsed {
-  max-height:0;
+  transition:height 1s ease-out;
 }
 
 /* MAGIC WAND ROTATION */

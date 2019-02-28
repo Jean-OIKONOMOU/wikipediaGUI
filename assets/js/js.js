@@ -15,6 +15,7 @@ button.addEventListener('click', function() {
       return resp.json();
     })
     .then(function(data) {
+      console.log(data);
       // BEGINNING TABLE CREATION
       var tbl = document.createElement("table");
       var tblBody = document.createElement("tbody");
@@ -38,6 +39,7 @@ button.addEventListener('click', function() {
         history.innerHTML = data[2][i];
         cell1.appendChild(history);
         history.insertAdjacentHTML("afterend", "<p>Cliquez sur la boîte pour faire apparaître l'iframe.</p>");
+        // STYLIZE THIS TO MAKE IT APPEAR TO THE EYE
         // CREATING IFRAME ELEMENT
         iframe = document.createElement("iframe");
         iframe.setAttribute("src", data[3][i]);
@@ -60,25 +62,21 @@ button.addEventListener('click', function() {
           var t = btn.getElementsByTagName("iframe");
 
           if (t[0].clientHeight == 0) {
-            t[0].style.height = "150px";
-          //  t[0].style.maxHeight = "100px";
-            t[0].className = '.section.collapsible';
-
+            t[0].style.height = "350px";
+            t[0].className = 'section';
           } else if (t[0].clientHeight >= 1) {
             t[0].style.height = "0";
-          //  t[0].style.maxHeight = "0px";
-          //t[0].classList.add('UP');
-          document.querySelector('.section.collapsible').className.toggle('collapsed');
+            //  t[0].style.maxHeight = "0px";
           }
         });
       });
 
-      for (var i = 0; i <= selector.length; i++) {
-        var index = selector[i]; //get the nth-child number here
-        //selector[i].style.color = "red";
-        selector[i].dataset.number = index;
-        //  console.log(index);
-      }
+      /*    for (var i = 0; i <= selector.length; i++) {
+            var index = selector[i]; //get the nth-child number here
+            //selector[i].style.color = "red";
+            selector[i].dataset.number = index;
+            //  console.log(index);
+          }*/
 
     });
 });
