@@ -4,13 +4,9 @@ var input = document.getElementById("searchTxt");
 var myDiv = document.getElementById("id01");
 
 button.addEventListener('click', function() {
-  // event.preventDefault();
-  if (input.value.length == 0) {
-    myDiv.removeChild(myDiv.childNodes[0]);
-  }
+  myDiv.removeChild(myDiv.childNodes[0]);
 
   var trucBidule = input.value;
-  // trucBidule.trim(); also - replace spaces with underscore function;
   var url = "https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=" + trucBidule;
 
   fetch(url)
@@ -19,18 +15,17 @@ button.addEventListener('click', function() {
       return resp.json();
     })
     .then(function(data) {
-      //
-      console.log(data);
-
       // BEGINNING TABLE CREATION
       var tbl = document.createElement("table");
       var tblBody = document.createElement("tbody");
-
-      // creating the rows
+      var cell1;
+      var iframe;
+      // CREATING ROWS
       for (i = 0; i < data[1].length; i++) {
         var row = document.createElement("tr");
-        var cell1 = document.createElement("td");
-        // Title Element
+        cell1 = document.createElement("td");
+        cell1.className = "tile";
+        // CREATING TITLE ELEMENT
         var a = document.createElement("a");
         a.setAttribute("href", data[3][i]);
         a.setAttribute("target", "_blank");
@@ -38,30 +33,51 @@ button.addEventListener('click', function() {
         linebreak = document.createElement("br");
         a.appendChild(linebreak);
         cell1.appendChild(a);
-        // Paragraph Element
+        // CREATING PARAGRAPH ELEMENT
         var history = document.createElement("p");
         history.innerHTML = data[2][i];
         cell1.appendChild(history);
-        //history.style.margin = "40";
-        // iFrame Element
-        var iframe = document.createElement("iframe");
+        history.insertAdjacentHTML("afterend", "<p>Cliquez sur la boîte pour faire apparaître l'iframe.</p>");
+        // CREATING IFRAME ELEMENT
+        iframe = document.createElement("iframe");
         iframe.setAttribute("src", data[3][i]);
+        iframe.setAttribute("height", "0");
+        // PUTTING TOGETHER ELEMENTS
         cell1.appendChild(iframe);
         row.appendChild(cell1);
         tblBody.appendChild(row);
       }
 
-      // put the <tbody> in the <table>
       tbl.appendChild(tblBody);
 
-      // appends <table> if myDiv is empty
+      myDiv.appendChild(tbl);
 
-      for (i = 0; i < 2; i++) {
-        if (myDiv.children.length > 0) {
-          myDiv.removeChild(myDiv.childNodes[0]);
-        } else if (myDiv.children.length === 0) {
-          myDiv.appendChild(tbl);
-        }
+
+      var selector = document.getElementsByClassName("tile");
+
+      Array.from(selector).forEach(function(btn) {
+        btn.addEventListener("click", function() {
+          var t = btn.getElementsByTagName("iframe");
+
+          if (t[0].clientHeight == 0) {
+            t[0].style.height = "150px";
+          //  t[0].style.maxHeight = "100px";
+            t[0].className = '.section.collapsible';
+
+          } else if (t[0].clientHeight >= 1) {
+            t[0].style.height = "0";
+          //  t[0].style.maxHeight = "0px";
+          //t[0].classList.add('UP');
+          document.querySelector('.section.collapsible').className.toggle('collapsed');
+          }
+        });
+      });
+
+      for (var i = 0; i <= selector.length; i++) {
+        var index = selector[i]; //get the nth-child number here
+        //selector[i].style.color = "red";
+        selector[i].dataset.number = index;
+        //  console.log(index);
       }
 
     });

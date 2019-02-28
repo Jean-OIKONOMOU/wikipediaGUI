@@ -3,10 +3,10 @@
 
 <head>
   <meta charset="utf-8">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="assets/css/master.css">
-<link rel="stylesheet" href="assets/css/normalize.css">
-<title></title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/master.css">
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <title></title>
 </head>
 
 <!--
@@ -21,24 +21,32 @@
 </div>-->
 
 <body>
+  <header class="container">
+    <div id="searchBar">
+      <input name="searchTxt" type="text" placeholder="Write In Me!" maxlength="50" id="searchTxt" class="searchField" />
+      <button id="target" type="button" name="button"><span>
+          <i class="fas fa-magic"></i>
+        </span></button>
+    </div>
+  </header>
 
-  <div id="searchBar">
-  <input name="searchTxt" type="text" placeholder="Write In Me!" maxlength="50" id="searchTxt" class="searchField" />
-    <button id="target" type="button" name="button"><span>
-        <i class="fas fa-magic"></i>
-      </span></button>
 
-  </div>
   <!-- APPEND CHILD, CHILD MUST HAVE CSS PREBUILT fa-spin.-->
+  <main>
+    <div id="id01">
+    </div>
 
-  <div id="id01">
-  </div>
+    <div id="id02">
+    </div>
+  </main>
+
 
   <!-- CATAAS INTEGRATION -->
-  <div id="kitty">
-  </div>
-  <script type="text/javascript" src="assets/js/js.js">
-  </script>
+  <footer>
+    <script type="text/javascript" src="assets/js/js.js">
+    </script>
+  </footer>
+
 </body>
 
 </html>
