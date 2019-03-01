@@ -6,13 +6,13 @@ var myList = document.getElementById("id02");
 var listContainer = document.getElementById("container2");
 
 button.addEventListener('click', function() {
-//  myDiv.removeChild(myDiv.childNodes[0]);
+  //  myDiv.removeChild(myDiv.childNodes[0]);
   while (myDiv.firstChild) {
     myDiv.removeChild(myDiv.firstChild);
-}
+  }
   while (myList.firstChild) {
     myList.removeChild(myList.firstChild);
-}
+  }
 
   var trucBidule = input.value;
   var url = "https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&search=" + trucBidule;
@@ -33,7 +33,7 @@ button.addEventListener('click', function() {
       for (i = 0; i < data[1].length; i++) {
         var row = document.createElement("tr");
         cell1 = document.createElement("td");
-        cell1.id = ("id"+[i]);
+        cell1.id = ("id" + [i]);
         cell1.className = "tile";
         // CREATING TITLE ELEMENT
         var a = document.createElement("a");
@@ -48,7 +48,8 @@ button.addEventListener('click', function() {
         var li = document.createElement("li");
         var a2 = document.createElement("a");
         a2.innerHTML = data[1][i];
-        a2.setAttribute("href", "#id"+[i]);
+        a2.setAttribute("href", "#id" + [i]);
+        a2.className = "anchor";
         li.appendChild(a2);
         ul.appendChild(li);
         myList.appendChild(ul);
@@ -60,7 +61,6 @@ button.addEventListener('click', function() {
         history.innerHTML = data[2][i];
         cell1.appendChild(history);
         history.insertAdjacentHTML("afterend", "<p>Cliquez sur la boîte pour faire apparaître l'iframe.</p>");
-        // STYLIZE THIS TO MAKE IT APPEAR TO THE EYE
         // CREATING IFRAME ELEMENT
         iframe = document.createElement("iframe");
         iframe.setAttribute("src", data[3][i]);

@@ -31,8 +31,35 @@ main {
   overflow-y: hidden;
 }
 
+p {
+  color: #dddadb;
+}
+
 a {
-    color: blue !important;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+a:hover {
+  color: #2bbbb3;
+  border-bottom: 1px dotted;
+}
+
+li {
+  position: relative;
+  padding-bottom: 6px;
+  text-transform: uppercase;
+  list-style-type: none;
+}
+
+li:hover:before {
+  content: '›';
+  color: #2bbbb3;
+  position: absolute;
+  left: -1rem;
+  line-height: 1;
 }
 
 #id01 {
@@ -40,24 +67,20 @@ a {
   float: right;
 }
 
-#id02 {
-}
+#id02 {}
 
 ul {
-  list-style-type: none;
-  padding: 0.75rem;
-  text-transform: uppercase;
-  text-decoration: underline;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  padding: 0.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
   margin-bottom: -1rem;
 }
 
 #container2 {
-  position:fixed;
+  position: fixed;
   background-color: #6f7c6f;
-  left:0;
-  bottom:0;
+  left: 0;
+  bottom: 0;
   right: auto;
   height: 85%;
   white-space: nowrap;
@@ -91,18 +114,20 @@ button {
 }
 
 .tile {
-  border: 3px solid grey;
+  border: 3px solid black;
   padding: 20px;
   text-align: center;
   width: 10px;
-  background: rgb(76, 169, 173, 0.8);
+  background-color: rgb(111, 124, 111, 0.8);
   position: relative;
   border-radius: 5px;
   cursor: pointer;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 td:hover {
-  background-color: rgb(76, 169, 180, 1);
+  background-color: rgb(111, 124, 111, 1);
 }
 
 table {
@@ -132,17 +157,16 @@ iframe {
 
 /* ANIMATION CORNER ! */
 /* IFRAME DROPDOWN ANIMATION THING */
-
 .iframeAnimate {
   overflow: hidden;
   transition: height 1s ease-out;
 }
 
 .panelAnimate {
-  -webkit-transform: translate(100%,0) 1s ease-out;
-        -moz-transform: translate(100%,0) 1s ease-out;
-        -ms-transform: translate(100%,0) 1s ease-out;
-        -o-transform: translate(100%,0) 1s ease-out;
+  -webkit-transform: translate(100%, 0) 1s ease-out;
+  -moz-transform: translate(100%, 0) 1s ease-out;
+  -ms-transform: translate(100%, 0) 1s ease-out;
+  -o-transform: translate(100%, 0) 1s ease-out;
 }
 
 /* MAGIC WAND ROTATION */
