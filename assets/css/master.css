@@ -44,10 +44,12 @@ main {
 
 ul {
   list-style-type: none;
-  padding: 1rem;
+  padding: 0.75rem;
   text-transform: uppercase;
   text-decoration: underline;
-  margin-left: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: -1rem;
 }
 
 #container2 {
@@ -56,8 +58,8 @@ ul {
   left:0;
   bottom:0;
   right: auto;
-  padding: 1rem;
   height: 85%;
+  border: 2px solid black;
   white-space: nowrap;
   transition: all 2s;
 }
@@ -137,7 +139,6 @@ iframe {
 }
 
 .panelAnimate {
-  overflow: hidden;
   -webkit-transform: translate(100%,0) 1s ease-out;
         -moz-transform: translate(100%,0) 1s ease-out;
         -ms-transform: translate(100%,0) 1s ease-out;
@@ -166,6 +167,25 @@ iframe {
 
 /* Standar Syntax */
 @keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes rotating {
   from {
     -ms-transform: rotate(0deg);
     -moz-transform: rotate(0deg);

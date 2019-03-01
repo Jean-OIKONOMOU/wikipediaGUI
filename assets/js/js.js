@@ -32,6 +32,8 @@ button.addEventListener('click', function() {
       for (i = 0; i < data[1].length; i++) {
         var row = document.createElement("tr");
         cell1 = document.createElement("td");
+        cell1.id = ("id"+[i]);
+        console.log(cell1.id);
         cell1.className = "tile";
         // CREATING TITLE ELEMENT
         var a = document.createElement("a");
@@ -47,7 +49,7 @@ button.addEventListener('click', function() {
         li.innerHTML = data[1][i];
         ul.appendChild(li);
         myList.appendChild(ul);
-        document.getElementById("container2").className="panelAnimate";
+      //  document.getElementById("container2").className="panelAnimate";
         // CREATING PARAGRAPH ELEMENT
         var history = document.createElement("p");
         history.innerHTML = data[2][i];
@@ -67,7 +69,6 @@ button.addEventListener('click', function() {
       tbl.appendChild(tblBody);
 
       myDiv.appendChild(tbl);
-
 
       var selector = document.getElementsByClassName("tile");
 
