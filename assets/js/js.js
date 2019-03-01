@@ -3,6 +3,7 @@ var searchBar = document.getElementById('searchBar');
 var input = document.getElementById("searchTxt");
 var myDiv = document.getElementById("id01");
 var myList = document.getElementById("id02");
+var listContainer = document.getElementById("container2");
 
 button.addEventListener('click', function() {
 //  myDiv.removeChild(myDiv.childNodes[0]);
@@ -33,7 +34,6 @@ button.addEventListener('click', function() {
         var row = document.createElement("tr");
         cell1 = document.createElement("td");
         cell1.id = ("id"+[i]);
-        console.log(cell1.id);
         cell1.className = "tile";
         // CREATING TITLE ELEMENT
         var a = document.createElement("a");
@@ -46,10 +46,15 @@ button.addEventListener('click', function() {
         // MY LIST
         var ul = document.createElement("ul");
         var li = document.createElement("li");
-        li.innerHTML = data[1][i];
+        var a2 = document.createElement("a");
+        a2.innerHTML = data[1][i];
+        a2.setAttribute("href", "#id"+[i]);
+        li.appendChild(a2);
         ul.appendChild(li);
         myList.appendChild(ul);
-      //  document.getElementById("container2").className="panelAnimate";
+        listContainer.style.borderRight = "2px solid black";
+        listContainer.style.borderTop = "2px solid black";
+        //document.getElementById("container2").className="panelAnimate";
         // CREATING PARAGRAPH ELEMENT
         var history = document.createElement("p");
         history.innerHTML = data[2][i];
