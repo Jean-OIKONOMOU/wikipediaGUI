@@ -1,10 +1,10 @@
 # C'est quoi ces dossiers ?
 Bonne question! ***beCodeJsonExercice*** est un dossier contenant mon code où j'ai travaillé sur __https://project-622bb.firebaseio.com/BeCode.json__. Il y a un fichier Javascript où j'ai travaillé avec **XML** et un autre où j'ai travaillé avec **FETCH**.
 
-Le dossier ***ASSETS***, lui, est le dossier contenant les.. ben les *assets* nécessaires pour mon l'Index.html qui lui contient mon projet ***WikiKiller***.
+Le dossier ***ASSETS***, lui, est le dossier contenant les.. ben les *assets* nécessaires pour mon Index.html qui lui contient mon projet ***WikiKiller***.
 
 # Qui a fait le projet :
-De nouveau, c'est un projet qui a très vite tourné au collaboratif car on a tous des niveaux différents du coup on m'a aidé, j'ai beaucoup aidé d'autres personnes. Je remercie tous ceux qui m'ont aidé :) Sinon, c'est moi qui a codé mon site (forcément): ***Jean-Adrian OIKONOMOU***.
+De nouveau, c'est un projet qui a très vite tourné au collaboratif car on a tous des niveaux différents du coup on m'a aidé, et j'ai beaucoup aidé d'autres personnes. Je remercie tous ceux qui m'ont aidé :) Sinon, c'est moi qui a codé mon site (forcément): ***Jean-Adrian OIKONOMOU***.
 
 # Qu’est-ce que c’est ?
 Un GUI de Wikipédia pour les gouverner tous. Rapide, lightweight, concis.
