@@ -4,7 +4,7 @@ Bonne question! ***beCodeJsonExercice*** est un dossier contenant mon code où j
 Le dossier ***ASSETS***, lui, est le dossier contenant les.. ben les *assets* nécessaires pour mon Index.html qui lui contient mon projet ***WikiKiller***.
 
 # Qui a fait le projet :
-De nouveau, c'est un projet qui a très vite tourné au collaboratif car on a tous des niveaux différents du coup on m'a aidé, et j'ai beaucoup aidé d'autres personnes. Je remercie tous ceux qui m'ont aidé :) Sinon, c'est moi qui a codé mon site (forcément): ***Jean-Adrian OIKONOMOU***.
+De nouveau, c'est un projet qui a très vite tourné au collaboratif car on a tous des niveaux différents du coup on m'a aidé, et j'ai beaucoup aidé d'autres personnes. Je remercie tous ceux qui m'ont aidé :) Sinon, c'est moi qui a codé mon site (forcément): [***Jean-Adrian OIKONOMOU***](https://github.com/Jean-OIKONOMOU).
 
 # Qu’est-ce que c’est ?
 Un GUI de Wikipédia pour les gouverner tous. Rapide, lightweight, concis.
